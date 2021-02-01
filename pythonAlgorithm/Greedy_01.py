@@ -1,13 +1,16 @@
 ## 다시 풀기
-N = input("N:")
-K = input("K:")
-result = 0
+N,K = map(int, input().split())
+count = 0
 
-a = N/(K*K)
-b = N%(K*K)
+while True:
+    a =  N % K
+    if a != 0:
+        count = count +1
+        N = N - 1
+    else:
+        N = N // K
+        count += 1
+    if N <= 1:
+        break
 
-result=a+1
-for i in range (0,b):
-    result+=1
-
-print("result:",result)
+print("result:", count)
